@@ -36,7 +36,7 @@ function Header() {
   };
 
   return (
-    <header className="h-16 shadow-md bg-white  w-full">
+    <header className="h-16 shadow-md bg-white fixed z-40 w-full">
       <div className=" h-full container mx-auto flex items-center px-4 justify-between ">
         <Link to={"/"}>
           <Logo w={90} h={50} />
@@ -70,7 +70,7 @@ function Header() {
               </div>
             )}
             {menuDisplay && (
-              <div className="absolute bg-white bottom-0 top-11 h-fit p-2 shadow-lg rounded">
+              <div className="absolute bg-white bottom-0 top-11 h-fit p-2 shadow-lg rounded z-20">
                 <nav>
                   {user?.role === ROLE.ADMIN && (
                     <Link
