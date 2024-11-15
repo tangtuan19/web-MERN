@@ -4,7 +4,7 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import Context from '../context'
 import displayUSDCurrency from '../helpers/displayCurrency'
-import addToCart from './addToCart'
+import addToCart from '../helpers/addToCart'
 
 const CategroyWiseProductDisplay = ({category, heading}) => {
     const [data,setData] = useState([])

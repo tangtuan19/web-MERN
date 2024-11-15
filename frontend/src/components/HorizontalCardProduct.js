@@ -3,7 +3,7 @@ import fetchCategoryWiseProduct from '../helpers/fetchCategoryWiseProduct'
 import { Link } from 'react-router-dom'
 import displayUSDCurrency from '../helpers/displayCurrency'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6'
-import addToCart from './addToCart'
+import addToCart from '../helpers/addToCart'
 
 const HorizontalCardProduct = ({category,  heading }) => {
 
