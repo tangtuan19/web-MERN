@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import SummaryApi from '../common'
-import { FaStar } from "react-icons/fa";
-import { FaStarHalf } from "react-icons/fa";
 import displayUSDCurrency from '../helpers/displayCurrency';
-import VerticalCardProduct from '../components/VerticalCardProduct';
+import CategroyWiseProductDisplay from '../components/CategoryWiseProductDisplay';
 
 
 const ProductDetails = () => {
@@ -150,13 +148,7 @@ const ProductDetails = () => {
                 <h2 className='text-2xl lg:text-4xl font-medium'>{data?.productName}</h2>
                 <p className='capitalize text-slate-400'>{data?.category}</p>
 
-                <div className=' text-yellow-400 flex items-center gap-1'>
-                    <FaStar/>
-                    <FaStar/>
-                    <FaStar/>
-                    <FaStar/>
-                    <FaStarHalf/>
-                </div>
+              
 
                 <div className='flex items-center gap-2 text-2xl lg:text-3xl font-medium my-1'>
                   <p className='text-red-600'>{displayUSDCurrency(data.sellingPrice)}</p>
@@ -181,9 +173,13 @@ const ProductDetails = () => {
 
 
       </div>
+      {
+        data.category && (
+      <CategroyWiseProductDisplay category={data?.category} heading={"Recommended Product"}/>
+    )
+  }
 
-      
-      <VerticalCardProduct category={data.category} heading={"Recommended Product"}/>
+    
       </div>
 
   )
