@@ -1,12 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../Pages/Home";
-import Login from "../Pages/Login"
-import ForgotPassword from '../Pages/ForgotPassword'
-import SignUp from '../Pages/SignUp'
-import AdminPanel from '../Pages/AdminPanel'
+import Login from "../Pages/Login";
+import ForgotPassword from "../Pages/ForgotPassword";
+import SignUp from "../Pages/SignUp";
+import AdminPanel from "../Pages/AdminPanel";
 import AllUsers from "../Pages/AllUsers";
 import AllProducts from "../Pages/AllProducts";
+import CategoryProduct from '../Pages/CategoryProduct'
 
 const router = createBrowserRouter([
   {
@@ -19,31 +20,34 @@ const router = createBrowserRouter([
       },
       {
         path: "login",
-        element: <Login/>
+        element: <Login />,
       },
       {
         path: "forgot-password",
-        element: <ForgotPassword/>
+        element: <ForgotPassword />,
       },
       {
         path: "Sign-Up",
-        element: <SignUp/>
+        element: <SignUp />,
       },
       {
-        path : "admin-panel",
-        element : <AdminPanel/>,
-        children : [
+        path: "product-category",
+        element: <CategoryProduct />,
+      },
+      {
+        path: "admin-panel",
+        element: <AdminPanel />,
+        children: [
           {
-              path : "all-users",
-              element : <AllUsers/>
+            path: "all-users",
+            element: <AllUsers />,
           },
           {
-            path : "all-products",
-            element : <AllProducts/>
-        }
-      
-      ]
-    },
+            path: "all-products",
+            element: <AllProducts />,
+          },
+        ],
+      },
     ],
   },
 ]);
