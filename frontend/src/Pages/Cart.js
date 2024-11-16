@@ -109,6 +109,9 @@ const decraseQty = async(id,qty) =>{
     }
 }
 
+const totalQty = data.reduce((previousValue,currentValue)=> previousValue + currentValue.quantity,0)
+const totalPrice = data.reduce((preve,curr)=> preve + (curr.quantity * curr?.productId?.sellingPrice) ,0)
+
 console.log("cart-data",data)
 
   return (
@@ -176,12 +179,12 @@ console.log("cart-data",data)
                                     <h2 className='text-white bg-blue-600 px-4 py-1'>Summary</h2>
                                     <div className='flex items-center justify-between px-4 gap-2 font-medium text-lg text-slate-600'>
                                         <p>Quantity</p>
-                                        <p>{}</p>
+                                        <p>{totalQty}</p>
                                     </div>
 
                                     <div className='flex items-center justify-between px-4 gap-2 font-medium text-lg text-slate-600'>
                                         <p>Total Price</p>
-                                        <p>{displayUSDCurrency()}</p>    
+                                        <p>{displayUSDCurrency(totalPrice)}</p>    
                                     </div>
 
                                     <button className='bg-blue-600 p-2 text-white w-full mt-2'>Payment</button>
