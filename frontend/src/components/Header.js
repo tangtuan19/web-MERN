@@ -72,7 +72,7 @@ function Header() {
             className="w-full outline-none "
             onChange={handleSearch}
           />
-          <div className="text-lg min-w-[50px] h-8 bg-red-600 flex items-center justify-center rounded-r-full text-white"  onChange={handleSearch} value={search}>
+          <div className="text-lg min-w-[50px] h-8 bg-blue-600 flex items-center justify-center rounded-r-full text-white"  onChange={handleSearch} value={search}>
             <GrSearch />
           </div>
         </div>
@@ -115,7 +115,7 @@ function Header() {
                       <Link to={"/cart"} className='text-2xl relative'>
                           <span><FaShoppingCart/></span>
       
-                          <div className='bg-red-600 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3'>
+                          <div className='bg-blue-600 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3'>
                               <p className='text-sm'>{context?.cartProductCount}</p>
                           </div>
                       </Link>
@@ -126,14 +126,14 @@ function Header() {
             {user?._id ? (
               <button
                 onClick={handleLogout}
-                className="px-3 py-1 rounded-full text-white bg-red-600 hover:bg-red-700"
+                className="px-3 py-1 rounded-full text-white bg-blue-600 hover:bg-blue-700"
               >
                 Logout
               </button>
             ) : (
               <Link
                 to={"/login"}
-                className="px-3 py-1 rounded-full text-white bg-red-600 hover:bg-red-700"
+                className="px-3 py-1 rounded-full text-white bg-blue-600 hover:bg-blue-700"
               >
                 Login
               </Link>

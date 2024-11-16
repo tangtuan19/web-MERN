@@ -43,7 +43,7 @@ const AllUsers = () => {
     <div>
       <table className="w-full userTable">
         <thead>
-          <tr className="bg-black text-white">
+          <tr className="bg-blue-600 text-white">
             <th>Sr.</th>
             <th>Name</th>
             <th>Email</th>

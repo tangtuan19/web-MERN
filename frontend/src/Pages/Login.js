@@ -108,12 +108,12 @@ if(dataApi.error){
               </div>
               <Link
                 to={"/forgot-password"}
-                className=" block w-fit ml-auto hover:text-red-600"
+                className=" block w-fit ml-auto hover:text-blue-600"
               >
                 Forgot Password
               </Link>
             </div>
-            <button className="bg-red-600 hover:bg-red-800 text-white px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-110 translate-all mx-auto block mt-6">
+            <button className="bg-blue-600 hover:bg-blue-800 text-white px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-110 translate-all mx-auto block mt-6">
               login
             </button>
           </form>
@@ -121,7 +121,7 @@ if(dataApi.error){
             Don't have account ?
             <Link
               to="/sign-up"
-              className="text-red-600 hover:text-red-800 hover:underline"
+              className="text-blue-600 hover:text-blue-800 hover:underline"
             >
               Sign Up
             </Link>

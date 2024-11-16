@@ -99,7 +99,7 @@ const UploadProduct = ({ onClose, fetchData }) => {
     <div className="fixed w-full  h-full bg-slate-200 bg-opacity-55 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
       <div className="bg-white p-4 rounded w-full max-w-2xl h-full max-h-[80%] overflow-hidden">
         <div className="flex justify-between items-center pb-3">
-          <h2 className="font-bold text-lg">UploadProduct</h2>
+          <h2 className="font-bold text-lg">Upload Product</h2>
           <div
             className="w-fit ml-auto text-2xl hover:text-red-600 cursor-pointer"
             onClick={onClose}
@@ -194,7 +194,7 @@ const UploadProduct = ({ onClose, fetchData }) => {
                       />
 
                       <div
-                        className="absolute bottom-0 right-0 p-1 text-white bg-red-600 rounded-full hidden group-hover:block cursor-pointer"
+                        className="absolute bottom-0 right-0 p-1 text-white bg-blue-600 rounded-full hidden group-hover:block cursor-pointer"
                         onClick={() => handleDeleteProductImage(index)}
                       >
                         <MdDelete />
@@ -249,7 +249,7 @@ const UploadProduct = ({ onClose, fetchData }) => {
               >
               </textarea>
 
-          <button className="px-3 py-2 bg-red-600 text-white mb-10 hover:bg-red-700">
+          <button className="px-3 py-2 bg-blue-600 text-white mb-10 hover:bg-red-700">
             Upload Product
           </button>
         </form>

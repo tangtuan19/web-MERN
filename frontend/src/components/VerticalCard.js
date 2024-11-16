@@ -47,10 +47,10 @@ const VerticalCard = ({loading,data = []}) => {
                                     <h2 className='font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-black'>{product?.productName}</h2>
                                     <p className='capitalize text-slate-500'>{product?.category}</p>
                                     <div className='flex gap-3'>
-                                        <p className='text-red-600 font-medium'>{ displayUSDCurrency(product?.sellingPrice) }</p>
+                                        <p className='text-blue-600 font-medium'>{ displayUSDCurrency(product?.sellingPrice) }</p>
                                         <p className='text-slate-500 line-through'>{ displayUSDCurrency(product?.price)  }</p>
                                     </div>
-                                    <button className='text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-0.5 rounded-full' onClick={(e)=>handleAddToCart(e,product?._id)}>Add to Cart</button>
+                                    <button className='text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-0.5 rounded-full' onClick={(e)=>handleAddToCart(e,product?._id)}>Add to Cart</button>
                                 </div>
                             </Link>
                         )
