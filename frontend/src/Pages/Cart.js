@@ -11,7 +11,7 @@ const Cart = () => {
   const context = useContext(Context)
 
   const fetchData = async() =>{
-    setLoading(true)
+
     const response = await fetch(SummaryApi.addToCartProductView.url,{
         method : SummaryApi.addToCartProductView.method,
         credentials : 'include',
@@ -21,7 +21,6 @@ const Cart = () => {
     })
    
 
-    setLoading(false)
 
     const responseData = await response.json()
 
@@ -108,6 +107,17 @@ const decraseQty = async(id,qty) =>{
         context.fetchUserAddToCart()
     }
 }
+
+const handleLoading = async() =>{
+    await fetchData()
+}
+
+useEffect(()=>{
+    setLoading(true)
+    handleLoading()
+     setLoading(false)
+},[])
+
 
 const totalQty = data.reduce((previousValue,currentValue)=> previousValue + currentValue.quantity,0)
 const totalPrice = data.reduce((preve,curr)=> preve + (curr.quantity * curr?.productId?.sellingPrice) ,0)

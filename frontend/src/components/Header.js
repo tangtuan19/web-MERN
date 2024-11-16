@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 // import React from "react";
 import Logo from "./Logo";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { GrSearch } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
@@ -18,6 +18,12 @@ function Header() {
   const [menuDisplay, setMenuDisplay] = useState(false);
   const context = useContext(Context)
   const navigate = useNavigate()
+  const searchInput = useLocation()
+  const URLSearch = new URLSearchParams(searchInput?.search)
+  const searchQuery = URLSearch.getAll("q")
+  const [search,setSearch] = useState(searchQuery)
+
+ 
 
   // console.log("user header", user);
 
@@ -31,6 +37,7 @@ function Header() {
     if (data.success) {
       toast.success(data.message);
       dispatch(setUserDetails(null));
+      navigate("/")
     }
 
     if (data.error) {
@@ -43,7 +50,7 @@ function Header() {
 //search
   const handleSearch = (e)=>{
     const { value } = e.target
-    // setSearch(value)
+    setSearch(value)
 
     if(value){
       navigate(`/search?q=${value}`)
@@ -65,7 +72,7 @@ function Header() {
             className="w-full outline-none "
             onChange={handleSearch}
           />
-          <div className="text-lg min-w-[50px] h-8 bg-red-600 flex items-center justify-center rounded-r-full text-white" >
+          <div className="text-lg min-w-[50px] h-8 bg-red-600 flex items-center justify-center rounded-r-full text-white"  onChange={handleSearch} value={search}>
             <GrSearch />
           </div>
         </div>
