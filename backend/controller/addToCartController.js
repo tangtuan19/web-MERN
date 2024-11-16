@@ -29,7 +29,7 @@ const addToCartController = async(req,res)=>{
 
         return res.json({
             data : saveProduct,
-            message : "Product Added in Cart",
+            message : "Product Added to Cart",
             success : true,
             error : false
         })

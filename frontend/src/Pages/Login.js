@@ -16,7 +16,7 @@ function Login() {
   });
 
   const navigate = useNavigate()
-  const {fetchUserDetails} = useContext(Context)
+  const {fetchUserDetails, fetchUserAddToCart} = useContext(Context)
 
  
 
@@ -51,6 +51,7 @@ function Login() {
     toast.success(dataApi.message)
     navigate('/')
     fetchUserDetails()
+    fetchUserAddToCart()
     
     
 }

@@ -18,6 +18,13 @@ const VerticalCardProduct = ({category, heading}) => {
     const { fetchUserAddToCart } = useContext(Context)
 
 
+    
+    const handleAddToCart = async(e,id)=>{
+        await addToCart(e,id)
+        fetchUserAddToCart()
+     }
+
+
 
     const fetchData = async() =>{
         setLoading(true)
@@ -85,7 +92,7 @@ const VerticalCardProduct = ({category, heading}) => {
                                         <p className='text-red-600 font-medium'>{ displayUSDCurrency(product?.sellingPrice) }</p>
                                         <p className='text-slate-500 line-through'>{ displayUSDCurrency(product?.price)  }</p>
                                     </div>
-                                    <button className='text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-0.5 rounded-full' onClick={(e)=>addToCart(e,product?._id)}>Add to Cart</button>
+                                    <button className='text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-0.5 rounded-full' onClick={(e)=>handleAddToCart(e,product?._id)}>Add to Cart</button>
                                 </div>
                             </Link>
                         )
